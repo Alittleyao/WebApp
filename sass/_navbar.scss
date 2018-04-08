@@ -1,0 +1,117 @@
+.navbar {
+  background-color: $navbar-backsround;
+
+  .container {
+    margin-left: 5%;
+    margin-right: 5%;
+    transition: all .5s;
+  }
+
+  .content {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+
+  .menu-icon {
+    align-self: center;
+    transition: all .5s;
+    i {
+      cursor: pointer;
+    }
+  }
+
+  .header {
+    align-self: center;
+    transition: all .5s;
+  }
+
+  .header > img {
+    box-sizing: content-box;
+    width: 98px;
+    padding: 8px;
+  }
+
+  .menu {
+    margin-left: 56px;
+    transition: all .4s;
+    .item {
+      display: inline-block;
+      margin-left: 24px;
+      margin-right: 24px;
+      padding-bottom: 32px;
+      padding-top: 24px;
+      font-size: 18px;
+      color: #000;
+    }
+    .active {
+      border-bottom: 2px solid #000;
+    }
+  }
+
+  .search-icon {
+    flex-grow: 1;
+    text-align: right;
+    align-self: center;
+    cursor: pointer;
+  }
+
+  .search-form {
+    position: absolute;
+    transform: translateY(-120px);
+    transition: all .5s;
+    opacity: 0;
+  }
+
+  .search-form > input {
+    border: 2px solid rgba(#ffffff, 0);
+    padding-left: 10px;
+    background-color: inherit;
+    color: #e2dddd;
+  }
+
+  .searching ~ .search-form {
+    transform: translateY(-50px);
+    opacity: 1;
+  }
+
+  .searching {
+    .header, .menu, .menu-icon {
+      transform: translateY(80px);
+      opacity: 0;
+    }
+  }
+}
+
+/* 屏幕尺寸大于767px */
+@media only screen and (min-width: 767px) {
+  .navbar {
+    .menu-icon {
+      display: none;
+    }
+  }
+}
+
+/* 屏幕尺寸小于767px */
+@media only screen and (max-width:767px) {
+  .navbar {
+    .header > img {
+      width: 56px;
+    }
+    .content {
+      justify-content: space-between;
+    }
+    .content .menu {
+      display: none;
+    }
+    .search-icon {
+      flex-grow: 0;
+    }
+    .searching ~ .search-form {
+      transform: translateY(-40px);
+      opacity: 1;
+    }
+  }
+}

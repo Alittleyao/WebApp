@@ -1,0 +1,49 @@
+.sidebar {
+  width: 30%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  box-shadow: .05em .05em .1em .1em rgba(97, 93, 93, 0.1);
+  background-color: $navbar-backsround;
+  display: none;
+  .menu {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    .item {
+      padding: 13px;
+      padding-right: 24px;
+      font-size: 18px;
+      color: #000;
+      &.active {
+        background: $page-background;
+      }
+      &:hover {
+        background-color: #fbfbfb;
+      }
+    }
+  }
+  .close-icon {
+    box-sizing: border-box;
+    height: 50px;
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.navbarMove {
+  position: relative;
+  z-index: 1;
+  .container {
+    transform: translateX(30%);
+  }
+}
+
+/* 屏幕尺寸大于767px */
+@media only screen and (min-width: 767px) {
+  .sidebar {
+    display: none;
+  }
+}

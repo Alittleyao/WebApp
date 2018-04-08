@@ -1,0 +1,132 @@
+@charset "UTF-8";
+/* 通用样式 */
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+/* 基础样式 */
+body {
+  background-color: #f8f8f8;
+  font-family: "PingFangSC-Light"; }
+
+.navbar {
+  background-color: #fff; }
+  .navbar .container {
+    margin-left: 5%;
+    margin-right: 5%;
+    transition: all .5s; }
+  .navbar .content {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    overflow: hidden; }
+  .navbar .menu-icon {
+    align-self: center;
+    transition: all .5s; }
+    .navbar .menu-icon i {
+      cursor: pointer; }
+  .navbar .header {
+    align-self: center;
+    transition: all .5s; }
+  .navbar .header > img {
+    box-sizing: content-box;
+    width: 98px;
+    padding: 8px; }
+  .navbar .menu {
+    margin-left: 56px;
+    transition: all .4s; }
+    .navbar .menu .item {
+      display: inline-block;
+      margin-left: 24px;
+      margin-right: 24px;
+      padding-bottom: 32px;
+      padding-top: 24px;
+      font-size: 18px;
+      color: #000; }
+    .navbar .menu .active {
+      border-bottom: 2px solid #000; }
+  .navbar .search-icon {
+    flex-grow: 1;
+    text-align: right;
+    align-self: center;
+    cursor: pointer; }
+  .navbar .search-form {
+    position: absolute;
+    transform: translateY(-120px);
+    transition: all .5s;
+    opacity: 0; }
+  .navbar .search-form > input {
+    border: 2px solid rgba(255, 255, 255, 0);
+    padding-left: 10px;
+    background-color: inherit;
+    color: #e2dddd; }
+  .navbar .searching ~ .search-form {
+    transform: translateY(-50px);
+    opacity: 1; }
+  .navbar .searching .header, .navbar .searching .menu, .navbar .searching .menu-icon {
+    transform: translateY(80px);
+    opacity: 0; }
+
+/* 屏幕尺寸大于767px */
+@media only screen and (min-width: 767px) {
+  .navbar .menu-icon {
+    display: none; } }
+/* 屏幕尺寸小于767px */
+@media only screen and (max-width: 767px) {
+  .navbar .header > img {
+    width: 56px; }
+  .navbar .content {
+    justify-content: space-between; }
+  .navbar .content .menu {
+    display: none; }
+  .navbar .search-icon {
+    flex-grow: 0; }
+  .navbar .searching ~ .search-form {
+    transform: translateY(-40px);
+    opacity: 1; } }
+.sidebar {
+  width: 30%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  box-shadow: 0.05em 0.05em 0.1em 0.1em rgba(97, 93, 93, 0.1);
+  background-color: #fff;
+  display: none; }
+  .sidebar .menu {
+    display: flex;
+    flex-direction: column;
+    text-align: right; }
+    .sidebar .menu .item {
+      padding: 13px;
+      padding-right: 24px;
+      font-size: 18px;
+      color: #000; }
+      .sidebar .menu .item.active {
+        background: #f8f8f8; }
+      .sidebar .menu .item:hover {
+        background-color: #fbfbfb; }
+  .sidebar .close-icon {
+    box-sizing: border-box;
+    height: 50px;
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center; }
+
+.navbarMove {
+  position: relative;
+  z-index: 1; }
+  .navbarMove .container {
+    transform: translateX(30%); }
+
+/* 屏幕尺寸大于767px */
+@media only screen and (min-width: 767px) {
+  .sidebar {
+    display: none; } }
+
+/*# sourceMappingURL=main.css.map */
