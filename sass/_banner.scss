@@ -1,0 +1,87 @@
+.banner {
+  background-color: #f0f0f0;
+
+  .item {
+    position: relative;
+    overflow: hidden;
+
+    .content {
+      //height: 600px;
+      display: flex;
+      align-items: center;
+      padding-top: 12%;
+      padding-bottom: 16%;
+    }
+
+    .container {
+      margin-left: 5%;
+      margin-right: 5%;
+      z-index: 1;
+    }
+
+    .sub-header {
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 8px;
+    }
+
+    .header {
+      font-size: 48px;
+      margin: 0;
+      margin-bottom: 16px;
+    }
+
+    .description {
+      font-size: 18px;
+      margin-bottom: 32px;
+    }
+
+    .action {
+      width: 120px;
+      height: 40px;
+      text-align: center;
+      font-size: 18px;
+      background-color: #000;
+      a {
+        color: #fff;
+        line-height: 40px;
+      }
+    }
+
+    /* 响应式背景图片 */
+    .image {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  }
+
+  /* 屏幕尺寸小于767px */
+  @media only screen and (max-width: 767px) {
+    .item {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      text-align: center;
+
+      .image {
+        position: inherit;
+      }
+
+      .content {
+        .container {
+          margin: 0;
+        }
+        .header {
+          font-size: 36px;
+        }
+        .action {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}

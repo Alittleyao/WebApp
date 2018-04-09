@@ -61,12 +61,16 @@ body {
     transition: all .5s;
     opacity: 0; }
   .navbar .search-form > input {
-    border: 2px solid rgba(255, 255, 255, 0);
-    padding-left: 10px;
-    background-color: inherit;
-    color: #e2dddd; }
+    width: 300px;
+    border: 1px solid rgba(240, 240, 240, 0);
+    padding: 5px 10px;
+    background-color: inherit; }
+    .navbar .search-form > input:focus {
+      border: 1px solid #f0f0f0;
+      box-shadow: 0.05em 0.05em 0.1em 0.1em rgba(97, 93, 93, 0.1);
+      outline: none; }
   .navbar .searching ~ .search-form {
-    transform: translateY(-50px);
+    transform: translateY(-55px);
     opacity: 1; }
   .navbar .searching .header, .navbar .searching .menu, .navbar .searching .menu-icon {
     transform: translateY(80px);
@@ -128,5 +132,62 @@ body {
 @media only screen and (min-width: 767px) {
   .sidebar {
     display: none; } }
+.banner {
+  background-color: #f0f0f0;
+  /* 屏幕尺寸小于767px */ }
+  .banner .item {
+    position: relative;
+    overflow: hidden;
+    /* 响应式背景图片 */ }
+    .banner .item .content {
+      display: flex;
+      align-items: center;
+      padding-top: 12%;
+      padding-bottom: 16%; }
+    .banner .item .container {
+      margin-left: 5%;
+      margin-right: 5%;
+      z-index: 1; }
+    .banner .item .sub-header {
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 8px; }
+    .banner .item .header {
+      font-size: 48px;
+      margin: 0;
+      margin-bottom: 16px; }
+    .banner .item .description {
+      font-size: 18px;
+      margin-bottom: 32px; }
+    .banner .item .action {
+      width: 120px;
+      height: 40px;
+      text-align: center;
+      font-size: 18px;
+      background-color: #000; }
+      .banner .item .action a {
+        color: #fff;
+        line-height: 40px; }
+    .banner .item .image {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto; }
+  @media only screen and (max-width: 767px) {
+    .banner .item {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      text-align: center; }
+      .banner .item .image {
+        position: inherit; }
+      .banner .item .content .container {
+        margin: 0; }
+      .banner .item .content .header {
+        font-size: 36px; }
+      .banner .item .content .action {
+        margin: 0 auto; } }
 
 /*# sourceMappingURL=main.css.map */

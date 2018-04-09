@@ -1,5 +1,5 @@
 .navbar {
-  background-color: $navbar-backsround;
+  background-color: $navbar-background;
 
   .container {
     margin-left: 5%;
@@ -44,7 +44,7 @@
       padding-bottom: 32px;
       padding-top: 24px;
       font-size: 18px;
-      color: #000;
+      color: $font-color;
     }
     .active {
       border-bottom: 2px solid #000;
@@ -66,14 +66,19 @@
   }
 
   .search-form > input {
-    border: 2px solid rgba(#ffffff, 0);
-    padding-left: 10px;
+    width: 300px;
+    border: 1px solid rgba(#f0f0f0, 0);
+    padding: 5px 10px;
     background-color: inherit;
-    color: #e2dddd;
+    &:focus {
+      border: 1px solid #f0f0f0;
+      box-shadow: .05em .05em .1em .1em rgba(97, 93, 93, 0.1);
+      outline: none;
+    }
   }
 
   .searching ~ .search-form {
-    transform: translateY(-50px);
+    transform: translateY(-55px);
     opacity: 1;
   }
 

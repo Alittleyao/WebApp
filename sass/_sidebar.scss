@@ -4,7 +4,7 @@
   position: absolute;
   z-index: 2;
   box-shadow: .05em .05em .1em .1em rgba(97, 93, 93, 0.1);
-  background-color: $navbar-backsround;
+  background-color: $navbar-background;
   display: none;
   .menu {
     display: flex;
@@ -14,7 +14,7 @@
       padding: 13px;
       padding-right: 24px;
       font-size: 18px;
-      color: #000;
+      color: $font-color;
       &.active {
         background: $page-background;
       }
