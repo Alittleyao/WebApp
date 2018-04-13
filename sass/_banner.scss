@@ -6,7 +6,6 @@
     overflow: hidden;
 
     .content {
-      //height: 600px;
       display: flex;
       align-items: center;
       padding-top: 12%;
@@ -35,6 +34,7 @@
     .description {
       font-size: 18px;
       margin-bottom: 32px;
+      font-weight: 600;
     }
 
     .action {
@@ -58,6 +58,15 @@
       margin: auto;
     }
   }
+
+  /* 屏幕尺寸大于1200px
+  @media only screen and (min-width: 1200px) {
+    .item {
+      .content {
+        height: 300px;
+      }
+    }
+  } */
 
   /* 屏幕尺寸小于767px */
   @media only screen and (max-width: 767px) {

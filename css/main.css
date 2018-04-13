@@ -134,6 +134,14 @@ body {
     display: none; } }
 .banner {
   background-color: #f0f0f0;
+  /* 屏幕尺寸大于1200px
+  @media only screen and (min-width: 1200px) {
+    .item {
+      .content {
+        height: 300px;
+      }
+    }
+  } */
   /* 屏幕尺寸小于767px */ }
   .banner .item {
     position: relative;
@@ -159,7 +167,8 @@ body {
       margin-bottom: 16px; }
     .banner .item .description {
       font-size: 18px;
-      margin-bottom: 32px; }
+      margin-bottom: 32px;
+      font-weight: 600; }
     .banner .item .action {
       width: 120px;
       height: 40px;
@@ -189,5 +198,63 @@ body {
         font-size: 36px; }
       .banner .item .content .action {
         margin: 0 auto; } }
+
+.slide {
+  width: 100%;
+  overflow: hidden;
+  position: relative; }
+  .slide .banner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    width: 500%;
+    transition: all 1s;
+    left: -100%; }
+    .slide .banner .item {
+      width: 20%; }
+  .slide #prev-button, .slide #next-button {
+    position: absolute;
+    z-index: 3;
+    bottom: 3%;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    border-radius: 50%;
+    border-color: transparent;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.4);
+    color: rgba(0, 0, 0, 0.4);
+    cursor: pointer; }
+    .slide #prev-button .material-icons, .slide #next-button .material-icons {
+      line-height: 28px; }
+  .slide #prev-button:hover, .slide #next-button:hover {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: rgba(0, 0, 0, 0.2); }
+  .slide #prev-button {
+    left: 3%; }
+  .slide #next-button {
+    right: 3%; }
+  @media only screen and (max-width: 767px) {
+    .slide .dots {
+      position: absolute;
+      bottom: 4.5%;
+      z-index: 2;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center; }
+      .slide .dots span {
+        display: inline-block;
+        height: 10px;
+        width: 10px;
+        margin-right: 1%;
+        border-radius: 50%;
+        background-color: #ccc;
+        cursor: pointer; }
+      .slide .dots .current-dot {
+        background-color: #000; } }
 
 /*# sourceMappingURL=main.css.map */
