@@ -59,39 +59,41 @@ window.onload = function() {
     $('.slide .item:last').prev().clone().prependTo('.banner');
 
     /* 手动轮播 */
-    /* 鼠标单击按钮时 */
+    // 鼠标单击按钮时
     let banner = $('.banner');
-    let offset = 1;
+    // 初始化鼠标单击次数，设置为全局变量
+    let offset = 0;
     $('.button').click(function () {
+      // 避免鼠标单击时，动画未执行完成
       let slideWidth = parseFloat($('.slide').css('width'));
       let bannerLeft = Math.abs(parseFloat(banner.css('left')));
       let times = bannerLeft/slideWidth;
-      /* 避免鼠标单击时，动画未执行完成 */
+      // 判断当前的偏移量是否是当前轮播图宽度的整数倍，整数倍表示动画执行完成
       if (Math.abs(times - Math.round(times)) < 0.001) {
         // 区分左右
         if (this.id == 'next-button') {
           offset++;
-          if (offset == 5) {
-            offset = 2;
+          if (offset == 4) {
+            offset = 1;
           }
         } else {
           offset--;
-          if (offset == -1) {
-            offset = 2;
+          if (offset == -2) {
+            offset = 1;
           }
         }
         animate(offset);
-        showCurrentDot(offset-1);
+        showCurrentDot(offset);
       }
     });
 
-    /* 动画效果 */
+    /* 动画效果，实现无缝轮播 */
     function animate (animateOffset) {
-      // 每次点击后banner的偏移量
-      let newLeft = -100*animateOffset;
+      // 每次点击后banner的偏移量,考虑初始偏移量为-100%，故加上1
+      let newLeft = -100*(animateOffset+1);
       banner.css('left', newLeft+'%');
 
-      // 显示最右边图像时
+      // 显示最右边图像后，设置无动画效果，切换回实际的第一张图片
       if (newLeft == -400) {
         setTimeout(function () {
           banner.css('transition', 'none');
@@ -99,7 +101,7 @@ window.onload = function() {
         },1000);
       }
 
-      // 显示最左边图像时
+      // 显示最左边图像时,设置无动画效果，切换回实际的最后一张图片
       else if ( newLeft == 0) {
         setTimeout(function () {
           banner.css('transition', 'none');
@@ -116,7 +118,7 @@ window.onload = function() {
 
     /* 显示当前图片对应的小圆点 */
     function showCurrentDot(dotOffset) {
-      /* 超出小圆点的索引值，即移动到最右边和最左边的图像时 */
+      // 超出小圆点的索引值，即移动到最右边和最左边的图像时
       if (dotOffset == 3) {
         dotOffset = 0;
       } else if (dotOffset == -1) {
@@ -128,7 +130,8 @@ window.onload = function() {
 
     /* 鼠标放置于小圆点上时 */
     $('.dots>span').mouseenter( function () {
-      offset = parseInt(this.id);
+      // 通过获取id值修改offset的值
+      offset = parseInt(this.id)-1;
       $('.dots>span').removeClass();
       this.className = 'current-dot';
       banner.css('transition', 'all 1s');
@@ -140,12 +143,13 @@ window.onload = function() {
     var timer;
     function autoPlay() {
       timer = setInterval(function () {
+        // 向右轮播
         offset++;
-        if (offset == 5) {
-          offset = 2;
+        if (offset == 4) {
+          offset = 1;
         }
         animate(offset);
-        showCurrentDot(offset-1);
+        showCurrentDot(offset);
       }, 3000);
     }
     autoPlay();
