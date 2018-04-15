@@ -1,0 +1,74 @@
+.story {
+  @include aspect-ratio(16, 8);
+
+  .content {
+    width: 50.5%;
+    box-sizing: border-box;
+    padding: 14% 40px 14% 8%;
+    z-index: 1;
+    background-color: $story-background;
+    border-right: 8px solid #f8f8f8;
+  }
+
+  .sub-header {
+    font-size: 14px;
+    margin-bottom: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .header {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+
+  .description {
+    font-size: 16px;
+    margin-bottom: 40px;
+    line-height: 1.8;
+  }
+
+  .action {
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border: 1px solid #000;
+    a {
+      color: #000;
+      line-height: 40px;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 767px) {
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0;
+      padding-top: 20%;
+
+      .description, .action {
+        display: none;
+      }
+
+      .header {
+        font-size: 24px;
+      }
+
+      .header::after, .sub-header::after {
+        display: block;
+        content: "";
+        width: 100px;
+        border-bottom: 1px solid #000;
+        padding-bottom: 8px;
+      }
+
+    }
+  }
+}

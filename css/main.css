@@ -292,6 +292,7 @@ body {
       padding-bottom: 16px;
       border-bottom: 2px solid #000; }
     .promo .content .description {
+      font-size: 16px;
       margin-bottom: 8px; }
   @media only screen and (max-width: 1200px) {
     .promo .column {
@@ -302,7 +303,70 @@ body {
         margin-right: 0; } }
   @media only screen and (max-width: 767px) {
     .promo .column {
-      width: 100%;
-      margin-right: 0; } }
+      width: 100%; }
+      .promo .column:nth-child(n) {
+        margin-right: 0; } }
+
+.story {
+  position: relative; }
+  .story::before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: 50; }
+  .story .content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0; }
+  .story .content {
+    width: 50.5%;
+    box-sizing: border-box;
+    padding: 14% 40px 14% 8%;
+    z-index: 1;
+    background-color: rgba(237, 237, 237, 0.85);
+    border-right: 8px solid #f8f8f8; }
+  .story .sub-header {
+    font-size: 14px;
+    margin-bottom: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase; }
+  .story .header {
+    font-size: 36px;
+    margin-bottom: 40px; }
+  .story .description {
+    font-size: 16px;
+    margin-bottom: 40px;
+    line-height: 1.8; }
+  .story .action {
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    border: 1px solid #000; }
+    .story .action a {
+      color: #000;
+      line-height: 40px; }
+  .story img {
+    width: 100%; }
+  @media only screen and (max-width: 767px) {
+    .story .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0;
+      padding-top: 20%; }
+      .story .content .description, .story .content .action {
+        display: none; }
+      .story .content .header {
+        font-size: 24px; }
+      .story .content .header::after, .story .content .sub-header::after {
+        display: block;
+        content: "";
+        width: 100px;
+        border-bottom: 1px solid #000;
+        padding-bottom: 8px; } }
 
 /*# sourceMappingURL=main.css.map */
