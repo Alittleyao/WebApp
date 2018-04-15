@@ -1,0 +1,82 @@
+.promo {
+  margin-bottom: 3%;
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .column {
+    width: 31.33%;
+    margin-right: 3%;
+    margin-top: 3%;
+    background-color: $promo-background;
+    cursor: pointer;
+    transition: box-shadow .5s;
+
+    &:hover {
+      box-shadow: 0 32px 48px rgba(#000,0.1);
+    }
+
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .content {
+    padding: 40px;
+    padding-bottom: 56px;
+
+    .header {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .sub-header {
+      font-size: 14px;
+      margin-bottom: 24px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .sub-header::after {
+      content: " ";
+      display: block;
+      width: 40px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #000;
+    }
+
+    .description {
+      margin-bottom: 8px;
+    }
+  }
+
+  /* 屏幕尺寸小于1200px */
+  @media only screen and (max-width: 1200px) {
+    .column {
+      width: 45%;
+      &:nth-child(3n) {
+        margin-right: 3%;
+      }
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  /* 屏幕尺寸小于767px */
+  @media only screen and (max-width: 767px) {
+    .column {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+
+}

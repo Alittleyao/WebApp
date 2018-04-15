@@ -1,5 +1,5 @@
 .banner {
-  background-color: #f0f0f0;
+  background-color: $banner-background;
 
   .item {
     position: relative;
@@ -13,8 +13,6 @@
     }
 
     .container {
-      margin-left: 5%;
-      margin-right: 5%;
       z-index: 1;
     }
 
@@ -27,7 +25,6 @@
 
     .header {
       font-size: 48px;
-      margin: 0;
       margin-bottom: 16px;
     }
 
@@ -59,14 +56,14 @@
     }
   }
 
-  /* 屏幕尺寸大于1200px
+  /* 屏幕尺寸大于1200px */
   @media only screen and (min-width: 1200px) {
     .item {
       .content {
-        height: 300px;
+        max-height: 600px;
       }
     }
-  } */
+  }
 
   /* 屏幕尺寸小于767px */
   @media only screen and (max-width: 767px) {

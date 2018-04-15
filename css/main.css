@@ -13,11 +13,13 @@ body {
   background-color: #f8f8f8;
   font-family: "PingFangSC-Light"; }
 
+.container {
+  margin-left: 5%;
+  margin-right: 5%; }
+
 .navbar {
   background-color: #fff; }
   .navbar .container {
-    margin-left: 5%;
-    margin-right: 5%;
     transition: all .5s; }
   .navbar .content {
     position: relative;
@@ -134,14 +136,7 @@ body {
     display: none; } }
 .banner {
   background-color: #f0f0f0;
-  /* 屏幕尺寸大于1200px
-  @media only screen and (min-width: 1200px) {
-    .item {
-      .content {
-        height: 300px;
-      }
-    }
-  } */
+  /* 屏幕尺寸大于1200px */
   /* 屏幕尺寸小于767px */ }
   .banner .item {
     position: relative;
@@ -153,8 +148,6 @@ body {
       padding-top: 12%;
       padding-bottom: 16%; }
     .banner .item .container {
-      margin-left: 5%;
-      margin-right: 5%;
       z-index: 1; }
     .banner .item .sub-header {
       font-size: 18px;
@@ -163,7 +156,6 @@ body {
       margin-bottom: 8px; }
     .banner .item .header {
       font-size: 48px;
-      margin: 0;
       margin-bottom: 16px; }
     .banner .item .description {
       font-size: 18px;
@@ -184,6 +176,9 @@ body {
       top: 0;
       bottom: 0;
       margin: auto; }
+  @media only screen and (min-width: 1200px) {
+    .banner .item .content {
+      max-height: 600px; } }
   @media only screen and (max-width: 767px) {
     .banner .item {
       display: flex;
@@ -256,5 +251,58 @@ body {
         cursor: pointer; }
       .slide .dots .current-dot {
         background-color: #000; } }
+
+.promo {
+  margin-bottom: 3%;
+  /* 屏幕尺寸小于1200px */
+  /* 屏幕尺寸小于767px */ }
+  .promo .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
+  .promo .column {
+    width: 31.33%;
+    margin-right: 3%;
+    margin-top: 3%;
+    background-color: #fff;
+    cursor: pointer;
+    transition: box-shadow .5s; }
+    .promo .column:hover {
+      box-shadow: 0 32px 48px rgba(0, 0, 0, 0.1); }
+    .promo .column:nth-child(3n) {
+      margin-right: 0; }
+  .promo img {
+    width: 100%; }
+  .promo .content {
+    padding: 40px;
+    padding-bottom: 56px; }
+    .promo .content .header {
+      font-size: 24px;
+      margin-bottom: 8px; }
+    .promo .content .sub-header {
+      font-size: 14px;
+      margin-bottom: 24px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase; }
+    .promo .content .sub-header::after {
+      content: " ";
+      display: block;
+      width: 40px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #000; }
+    .promo .content .description {
+      margin-bottom: 8px; }
+  @media only screen and (max-width: 1200px) {
+    .promo .column {
+      width: 45%; }
+      .promo .column:nth-child(3n) {
+        margin-right: 3%; }
+      .promo .column:nth-child(2n) {
+        margin-right: 0; } }
+  @media only screen and (max-width: 767px) {
+    .promo .column {
+      width: 100%;
+      margin-right: 0; } }
 
 /*# sourceMappingURL=main.css.map */
