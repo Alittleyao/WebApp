@@ -1,0 +1,46 @@
+footer {
+  padding-top: 6%;
+  padding-bottom: 8%;
+  background-color: $footer-background;
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .column {
+    text-align: right;
+  }
+
+  .header {
+    margin-bottom: 24px;
+    font-size: 16px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .list .item {
+    padding-right: 3px;
+    margin-bottom: 8px;
+    color: rgba(#000, 0.75);
+    cursor: pointer;
+  }
+
+  @media only screen and (max-width: 767px) {
+    .container {
+      display: flex;
+      flex-direction: column;
+    }
+    .column {
+      text-align: left;
+    }
+    .list {
+      padding-bottom: 24px;
+    }
+    .line {
+      border-bottom: 1px solid #ededed;
+      margin-bottom: 24px;
+    }
+  }
+}

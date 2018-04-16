@@ -162,4 +162,21 @@ window.onload = function() {
       autoPlay();
     });
 
+    /**
+     * footer 小尺寸屏幕添加手风琴效果
+     */
+     enquire.register("screen and (max-width: 767px)", {
+       match() {
+         $('footer .container').addClass('accordion');
+         /* 避免绑定多个click事件 */
+         $('.accordion .header').off('click.amark');
+         $('.accordion .header').on('click.amark', function () {
+           $(this).parent().siblings().children('.list').removeClass('active');
+           $(this).next().toggleClass('active');
+         });
+       },
+       unmatch() {
+         $('footer .container').removeClass('accordion');
+       }
+     })
 }

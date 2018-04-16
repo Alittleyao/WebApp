@@ -1,0 +1,13 @@
+.accordion {
+  .header {
+    cursor: pointer;
+  }
+
+  .list {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}
