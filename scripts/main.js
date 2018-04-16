@@ -163,6 +163,23 @@ window.onload = function() {
     });
 
     /**
+     * 产品页：滚动页面控制视频播放
+     */
+     window.onscroll = function () {
+       // 视频相对于文档的偏移
+       let scrollTop = document.documentElement.scrollTop;
+       let video =  $('.banner .video');
+       let height = parseInt(video.css('height'));
+       console.log(height);
+       if (scrollTop/height > 0.5) {
+         video.get(0).pause();
+       } else {
+         video.get(0).play();
+       }
+     }
+
+
+    /**
      * footer 小尺寸屏幕添加手风琴效果
      */
      enquire.register("screen and (max-width: 767px)", {
@@ -178,5 +195,5 @@ window.onload = function() {
        unmatch() {
          $('footer .container').removeClass('accordion');
        }
-     })
+     });
 }

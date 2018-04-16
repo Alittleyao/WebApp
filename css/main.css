@@ -136,17 +136,18 @@ body {
     display: none; } }
 .banner {
   background-color: #f0f0f0;
-  /* 屏幕尺寸大于1200px */
+  /* 屏幕尺寸大于767px */
   /* 屏幕尺寸小于767px */ }
   .banner .item {
     position: relative;
     overflow: hidden;
-    /* 响应式背景图片 */ }
+    /* 响应式背景图片、视频 */ }
     .banner .item .content {
       display: flex;
       align-items: center;
-      padding-top: 12%;
-      padding-bottom: 16%; }
+      height: 80vh;
+      max-height: 750px;
+      min-height: 350px; }
     .banner .item .container {
       z-index: 1; }
     .banner .item .sub-header {
@@ -170,29 +171,54 @@ body {
       .banner .item .action a {
         color: #fff;
         line-height: 40px; }
-    .banner .item .image {
+    .banner .item .image, .banner .item .video {
       width: 100%;
       position: absolute;
       top: 0;
       bottom: 0;
-      margin: auto; }
-  @media only screen and (min-width: 1200px) {
-    .banner .item .content {
-      max-height: 600px; } }
+      margin: auto;
+      height: 80vh;
+      object-fit: cover;
+      max-height: 750px;
+      min-height: 350px; }
+  .banner .white {
+    color: #fff; }
+  .banner .big .header {
+    font-size: 56px;
+    letter-spacing: 8px; }
+  .banner .big .sub-header {
+    font-size: 24px;
+    letter-spacing: 16px;
+    font-weight: 100; }
+  .banner .bottom .content {
+    align-items: flex-end;
+    padding-bottom: 4%; }
+  @media only screen and (min-width: 767px) {
+    .banner .description, .banner .action {
+      display: none; } }
   @media only screen and (max-width: 767px) {
     .banner .item {
       display: flex;
       flex-direction: column-reverse;
       align-items: center;
       text-align: center; }
-      .banner .item .image {
-        position: inherit; }
-      .banner .item .content .container {
-        margin: 0; }
-      .banner .item .content .header {
-        font-size: 36px; }
-      .banner .item .content .action {
-        margin: 0 auto; } }
+      .banner .item .image, .banner .item .video {
+        position: inherit;
+        height: auto; }
+      .banner .item .content {
+        height: auto;
+        color: #000;
+        align-items: center; }
+        .banner .item .content .container {
+          margin: 0; }
+        .banner .item .content .header {
+          font-size: 36px;
+          letter-spacing: 4px; }
+        .banner .item .content .sub-header {
+          font-size: 16px;
+          letter-spacing: 8px; }
+        .banner .item .content .action {
+          margin: 0 auto; } }
 
 .slide {
   width: 100%;
