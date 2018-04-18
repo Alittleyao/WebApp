@@ -80,13 +80,15 @@
   .bottom {
     .content {
       align-items: flex-end;
-      padding-bottom: 4%;
+      .header {
+        padding-bottom: 10%;
+      }
     }
   }
 
   /* 屏幕尺寸大于767px */
    @media only screen and (min-width: 767px) {
-     .description, .action {
+     .hidden {
        display: none;
      }
    }

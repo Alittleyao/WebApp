@@ -191,10 +191,11 @@ body {
     letter-spacing: 16px;
     font-weight: 100; }
   .banner .bottom .content {
-    align-items: flex-end;
-    padding-bottom: 4%; }
+    align-items: flex-end; }
+    .banner .bottom .content .header {
+      padding-bottom: 10%; }
   @media only screen and (min-width: 767px) {
-    .banner .description, .banner .action {
+    .banner .hidden {
       display: none; } }
   @media only screen and (max-width: 767px) {
     .banner .item {
@@ -297,6 +298,8 @@ body {
       box-shadow: 0 32px 48px rgba(0, 0, 0, 0.1); }
     .promo .column:nth-child(3n) {
       margin-right: 0; }
+  .promo a {
+    color: #000; }
   .promo img {
     width: 100%; }
   .promo .content {
@@ -394,6 +397,125 @@ body {
         width: 100px;
         border-bottom: 1px solid #000;
         padding-bottom: 8px; } }
+
+.detail {
+  width: 100%;
+  background-color: #fff; }
+  .detail .text, .detail .image {
+    width: 300%;
+    display: flex; }
+  .detail .item {
+    width: 33.3333%; }
+  .detail .image {
+    position: relative; }
+  .detail .text > .item {
+    padding: 3%;
+    text-align: center; }
+  .detail .header {
+    font-size: 36px;
+    margin-bottom: 32px; }
+  .detail .sub-header {
+    font-size: 14px;
+    margin-bottom: 8px;
+    letter-spacing: 3px;
+    color: rgba(0, 0, 0, 0.5); }
+  .detail .description {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    font-weight: 100;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.5); }
+  .detail img {
+    width: 100%; }
+  @media only screen and (max-width: 767px) {
+    .detail .header {
+      font-size: 24px; }
+    .detail .description {
+      width: 85%;
+      font-size: 16px; } }
+
+#experience .text {
+  width: 400%; }
+  #experience .text .item {
+    width: 25%; }
+
+.feature {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 8%;
+  margin-left: 15%;
+  margin-right: 15%; }
+  .feature .column {
+    width: 45%;
+    margin-bottom: 8%; }
+    .feature .column:nth-child(odd) {
+      text-align: right; }
+  .feature .header {
+    font-size: 24px;
+    margin-bottom: 24px; }
+  .feature .description {
+    font-size: 18px;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.5); }
+
+@media only screen and (max-width: 767px) {
+  .feature {
+    flex-direction: column;
+    margin: 8%;
+    margin-bottom: 0; }
+    .feature .column {
+      width: 100%; }
+      .feature .column:nth-child(n) {
+        text-align: left; }
+    .feature .description {
+      font-size: 16px; } }
+.model {
+  background-color: #fff; }
+  .model .parameter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10% 0; }
+    .model .parameter .column {
+      margin-right: 10%; }
+      .model .parameter .column:last-child {
+        margin-right: 0; }
+    .model .parameter .label {
+      font-size: 18px;
+      margin-bottom: 16px; }
+    .model .parameter .value {
+      font-size: 36px;
+      font-weight: 100;
+      color: rgba(0, 0, 0, 0.75); }
+      .model .parameter .value span {
+        font-size: 18px; }
+  .model .type {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 10%;
+    padding-left: 5%;
+    padding-right: 5%; }
+    .model .type .header {
+      font-size: 20px;
+      margin-bottom: 32px;
+      text-transform: uppercase; }
+    .model .type .description {
+      margin-bottom: 8px;
+      color: rgba(0, 0, 0, 0.5); }
+  @media only screen and (max-width: 767px) {
+    .model .parameter .label {
+      font-size: 16px; }
+    .model .parameter .value {
+      font-size: 24px; }
+    .model .type .header {
+      font-size: 10px; }
+    .model .type .description {
+      font-size: 5px; } }
 
 footer {
   padding-top: 6%;

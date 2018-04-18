@@ -1,0 +1,48 @@
+.feature {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 8%;
+  margin-left: 15%;
+  margin-right: 15%;
+
+  .column {
+    width: 45%;
+    margin-bottom: 8%;
+
+    &:nth-child(odd) {
+      text-align: right;
+    }
+  }
+
+  .header {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+
+  .description {
+    font-size: 18px;
+    line-height: 1.5;
+    color: rgba(#000, 0.5);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .feature {
+    flex-direction: column;
+    margin: 8%;
+    margin-bottom: 0;
+
+    .column {
+      width: 100%;
+      &:nth-child(n) {
+        text-align: left;
+      }
+    }
+
+    .description {
+      font-size: 16px;
+    }
+  }
+}

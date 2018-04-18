@@ -4,7 +4,7 @@ window.onload = function() {
   /**
    * navbar
    */
-   $('.navbar .search-icon > i')
+  $('.navbar .search-icon > i')
     .click(function () {
       let icon = $(this);
       if (icon.text() === 'search') {
@@ -167,14 +167,15 @@ window.onload = function() {
      */
      window.onscroll = function () {
        // 视频相对于文档的偏移
-       let scrollTop = document.documentElement.scrollTop;
-       let video =  $('.banner .video');
-       let height = parseInt(video.css('height'));
-       console.log(height);
-       if (scrollTop/height > 0.5) {
-         video.get(0).pause();
-       } else {
-         video.get(0).play();
+       if ($('.banner .video').length) {
+         let scrollTop = document.documentElement.scrollTop;
+         let video =  $('.banner .video');
+         let height = parseInt(video.css('height'));
+         if (scrollTop/height > 0.5) {
+           video.get(0).pause();
+         } else {
+           video.get(0).play();
+         }
        }
      }
 

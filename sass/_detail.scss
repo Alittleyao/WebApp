@@ -1,0 +1,73 @@
+.detail {
+  width: 100%;
+  background-color: #fff;
+
+  .text, .image {
+    width: 300%;
+    display: flex;
+  }
+
+  .item {
+    width: 33.3333%;
+  }
+
+  .image {
+    position: relative;
+  }
+
+  .text>.item {
+    padding: 3%;
+    text-align: center;
+  }
+
+  .header {
+    font-size: 36px;
+    margin-bottom: 32px;
+  }
+
+  .sub-header {
+    font-size: 14px;
+    margin-bottom: 8px;
+    letter-spacing: 3px;
+    color: rgba(#000, 0.5);
+  }
+
+  .description {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    font-weight: 100;
+    line-height: 1.5;
+    color: rgba(#000, .5);
+  }
+
+
+  img {
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 767px) {
+    .header {
+      font-size: 24px;
+    }
+
+    .description {
+      width: 85%;
+      font-size: 16px;
+    }
+  }
+}
+
+#experience {
+  .text {
+    width: 400%;
+    .item {
+      width: 25%;
+    }
+  }
+
+  .image {
+    //left: 10%;
+  }
+}
