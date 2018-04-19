@@ -19,6 +19,31 @@ body {
 
 .navbar {
   background-color: #fff; }
+  .navbar.sub {
+    border-bottom: 1px solid #ececec;
+    width: 100%;
+    background-color: #f8f8f8; }
+    .navbar.sub .container {
+      position: relative; }
+    .navbar.sub .header {
+      text-transform: uppercase;
+      color: rgba(0, 0, 0, 0.1);
+      letter-spacing: 6px;
+      margin: 20px 0; }
+      .navbar.sub .header:hover {
+        color: rgba(0, 0, 0, 0.85);
+        cursor: pointer; }
+    .navbar.sub .menu {
+      position: absolute;
+      top: -20px;
+      right: 0;
+      width: 100%;
+      text-align: right; }
+      .navbar.sub .menu .item {
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.65); }
+        .navbar.sub .menu .item.active {
+          color: rgba(0, 0, 0, 0.85); }
   .navbar .container {
     transition: all .5s; }
   .navbar .content {
@@ -400,17 +425,27 @@ body {
 
 .detail {
   width: 100%;
+  position: relative;
+  overflow: hidden;
   background-color: #fff; }
-  .detail .text, .detail .image {
-    width: 300%;
-    display: flex; }
-  .detail .item {
-    width: 33.3333%; }
+  .detail .text {
+    position: relative;
+    width: 500%;
+    display: flex;
+    transition: all 1s;
+    left: -100%; }
+    .detail .text .item {
+      width: 20%;
+      padding: 1% 3%;
+      text-align: center; }
   .detail .image {
-    position: relative; }
-  .detail .text > .item {
-    padding: 3%;
-    text-align: center; }
+    position: relative;
+    width: 350%;
+    display: flex;
+    transition: all 1s;
+    left: -50%; }
+    .detail .image .item {
+      width: 14.2857%; }
   .detail .header {
     font-size: 36px;
     margin-bottom: 32px; }
@@ -429,17 +464,36 @@ body {
     color: rgba(0, 0, 0, 0.5); }
   .detail img {
     width: 100%; }
+  .detail #prev-button, .detail #next-button {
+    position: absolute;
+    z-index: 3;
+    bottom: 25%;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    border-radius: 50%;
+    border-color: transparent;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.4);
+    color: rgba(0, 0, 0, 0.4);
+    cursor: pointer; }
+    .detail #prev-button .material-icons, .detail #next-button .material-icons {
+      line-height: 28px; }
+  .detail #prev-button:hover, .detail #next-button:hover {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: rgba(0, 0, 0, 0.2); }
+  .detail #prev-button {
+    left: 2%; }
+  .detail #next-button {
+    right: 2%; }
   @media only screen and (max-width: 767px) {
     .detail .header {
       font-size: 24px; }
     .detail .description {
       width: 85%;
       font-size: 16px; } }
-
-#experience .text {
-  width: 400%; }
-  #experience .text .item {
-    width: 25%; }
 
 .feature {
   display: flex;
@@ -512,10 +566,9 @@ body {
       font-size: 16px; }
     .model .parameter .value {
       font-size: 24px; }
-    .model .type .header {
-      font-size: 10px; }
-    .model .type .description {
-      font-size: 5px; } }
+    .model .type {
+      display: block;
+      text-align: center; } }
 
 footer {
   padding-top: 6%;
@@ -555,5 +608,52 @@ footer {
   display: none; }
   .accordion .list.active {
     display: block; }
+
+.testRun {
+  position: relative;
+  overflow: hidden;
+  height: 60vh;
+  max-height: 530px;
+  min-height: 350px;
+  display: flex;
+  align-items: center; }
+  .testRun .content {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; }
+    .testRun .content .header {
+      font-size: 64px;
+      letter-spacing: 16px;
+      text-transform: uppercase;
+      color: #fff; }
+      @media only screen and (max-width: 767px) {
+        .testRun .content .header {
+          font-size: 48px; } }
+    .testRun .content .buttons {
+      border: 2px solid #fff; }
+      .testRun .content .buttons a {
+        display: inline-block;
+        width: 120px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        font-size: 18px;
+        background-color: #fff;
+        color: rgba(0, 0, 0, 0.75); }
+        .testRun .content .buttons a:first-child {
+          background-color: rgba(0, 0, 0, 0.3);
+          color: #fff; }
+  .testRun img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60vh;
+    max-height: 530px;
+    min-height: 350px;
+    object-fit: cover; }
 
 /*# sourceMappingURL=main.css.map */

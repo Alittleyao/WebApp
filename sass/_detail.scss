@@ -1,23 +1,33 @@
 .detail {
   width: 100%;
+  position: relative;
+  overflow: hidden;
   background-color: #fff;
 
-  .text, .image {
-    width: 300%;
+  .text {
+    position: relative;
+    width: 500%;
     display: flex;
-  }
+    transition: all 1s;
+    left: -100%;
 
-  .item {
-    width: 33.3333%;
+    .item {
+      width: 20%;
+      padding: 1% 3%;
+      text-align: center;
+    }
   }
 
   .image {
     position: relative;
-  }
+    width: 350%;
+    display: flex;
+    transition: all 1s;
+    left: -50%;
 
-  .text>.item {
-    padding: 3%;
-    text-align: center;
+    .item {
+      width: 14.2857%;
+    }
   }
 
   .header {
@@ -42,9 +52,41 @@
     color: rgba(#000, .5);
   }
 
-
   img {
     width: 100%;
+  }
+
+  #prev-button, #next-button{
+    position: absolute;
+    z-index: 3;
+    bottom: 25%;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    border-radius: 50%;
+    border-color: transparent;
+    outline: none;
+    background-color: rgba(#fff, 0.4);
+    color: rgba(#000, 0.4);
+    cursor: pointer;
+    .material-icons {
+      line-height: 28px;
+    }
+  }
+
+  #prev-button:hover, #next-button:hover {
+    outline: none;
+    background-color: rgba(#fff, 0.2);
+    color: rgba(#000, 0.2);
+  }
+
+  #prev-button {
+    left: 2%;
+  }
+
+  #next-button {
+    right: 2%;
   }
 
   @media only screen and (max-width: 767px) {
@@ -56,18 +98,5 @@
       width: 85%;
       font-size: 16px;
     }
-  }
-}
-
-#experience {
-  .text {
-    width: 400%;
-    .item {
-      width: 25%;
-    }
-  }
-
-  .image {
-    //left: 10%;
   }
 }

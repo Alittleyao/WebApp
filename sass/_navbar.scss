@@ -1,5 +1,44 @@
-.navbar {
+  .navbar {
   background-color: $navbar-background;
+
+  &.sub {
+    border-bottom: 1px solid #ececec;
+    width: 100%;
+    background-color: #f8f8f8;
+
+    .container {
+      position: relative;
+    }
+
+    .header {
+      text-transform: uppercase;
+      color: rgba(#000, .1);
+      letter-spacing: 6px;
+      margin: 20px 0;
+
+      &:hover {
+        color: rgba(#000, .85);
+        cursor: pointer;
+      }
+    }
+
+    .menu {
+      position: absolute;
+      top: -20px;
+      right: 0;
+      width: 100%;
+      text-align: right;
+
+      .item {
+        font-size: 16px;
+        color: rgba(#000, .65);
+
+        &.active {
+          color: rgba(#000, .85);
+        }
+      }
+    }
+  }
 
   .container {
     transition: all .5s;

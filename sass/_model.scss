@@ -60,12 +60,14 @@
     }
 
     .type {
-      .header {
-        font-size: 10px;
-      }
-      .description {
-        font-size: 5px;
-      }
+      display: block;
+      text-align: center;
+      // .header {
+      //   font-size: 10px;
+      // }
+      // .description {
+      //   font-size: 5px;
+      // }
     }
   }
 }
