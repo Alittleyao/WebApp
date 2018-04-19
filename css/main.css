@@ -23,9 +23,16 @@ body {
     border-bottom: 1px solid #ececec;
     width: 100%;
     background-color: #f8f8f8; }
+    .navbar.sub.fixed {
+      position: fixed;
+      top: 0;
+      z-index: 100; }
     .navbar.sub .container {
       position: relative; }
     .navbar.sub .header {
+      position: absolute;
+      top: 0;
+      left: 0;
       text-transform: uppercase;
       color: rgba(0, 0, 0, 0.1);
       letter-spacing: 6px;
@@ -34,10 +41,6 @@ body {
         color: rgba(0, 0, 0, 0.85);
         cursor: pointer; }
     .navbar.sub .menu {
-      position: absolute;
-      top: -20px;
-      right: 0;
-      width: 100%;
       text-align: right; }
       .navbar.sub .menu .item {
         font-size: 16px;

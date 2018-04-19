@@ -46,7 +46,7 @@ window.onload = function() {
     });
 
     /* 从导航栏克隆菜单到边栏 */
-    $('.navbar .menu')
+    $('#navigation .menu')
       .clone()
       .appendTo('.sidebar');
 
@@ -185,19 +185,39 @@ window.onload = function() {
       */
       window.onscroll = function () {
         // 视频相对于文档的偏移
+        let scrollTop = document.documentElement.scrollTop;
         if ($('.banner .video').length) {
-          let scrollTop = document.documentElement.scrollTop;
           let video =  $('.banner .video');
-          let height = parseInt(video.css('height'));
-          if (scrollTop/height > 0.5) {
+          let height1 = parseFloat(video.css('height'));
+          if (scrollTop/height1 > 0.5) {
             video.get(0).pause();
           } else {
             video.get(0).play();
           }
         }
-      }
+
+        // 固定页内子导航
+        if ($('.sub.navbar').length) {
+          let height2 = parseFloat($('.navbar').css('height')) + parseFloat($('.banner').css('height'));
+          console.log(scrollTop);
+          console.log(height2);
+          if (scrollTop >= height2) {
+            $('.sub.navbar').addClass('fixed');
+          } else {
+            $('.sub.navbar').removeClass('fixed');
+          }
+        }
+      };
 
       //产品页：固定子导航
+      // $(document).ready( function () {
+      //   $('.sub.navbar').posfixed( {
+      //     direct: 'top',
+      //     distance: 0,
+      //     type: 'while',
+      //     hide: false
+      //   });
+      // });
 
      /**
       * 产品页：轮播效果
